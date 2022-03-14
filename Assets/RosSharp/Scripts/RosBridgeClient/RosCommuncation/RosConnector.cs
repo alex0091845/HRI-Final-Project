@@ -66,8 +66,9 @@ namespace RosSharp.RosBridgeClient
         {
             IsConnected.Set();
             Debug.Log("Connected to RosBridge: " + RosBridgeServerUrl);
+            
+            // resets the Python rqt GUI on the Turtlebot on successful connection
             chatter.sendMessage(chatter.RESET);
-            // Debug.Log("sendkajsdnaksjakjfans");
         }
 
         public void OnClosed(object sender, EventArgs e)
