@@ -24,9 +24,10 @@ namespace RosSharp.RosBridgeClient
 {
     public class RosConnector : MonoBehaviour
     {
-        public Chatter chatter;
-        public int SecondsTimeout = 10;
+        public Chatter chatter;                 // to communicate with Turtlebot rqt GUI
+        public int SecondsTimeout = 10;         // threshold for stopping connection attempt
 
+        /** template code **/
         public RosSocket RosSocket { get; private set; }
         public RosSocket.SerializerEnum Serializer;
         public Protocol protocol;
@@ -62,6 +63,7 @@ namespace RosSharp.RosBridgeClient
             RosSocket.Close();
         }
 
+        /** modified template code **/
         public void OnConnected(object sender, EventArgs e)
         {
             IsConnected.Set();
